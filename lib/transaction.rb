@@ -10,4 +10,8 @@ class Transaction
     @history << [time.now, credit,nil, balance]
   end
 
+  def record_debit(debit, balance, time=Time)
+    @history << [time.now, nil, debit, balance]
+  end
+
 end
