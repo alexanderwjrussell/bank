@@ -1,9 +1,10 @@
 class Account
 
-  attr_reader :balance
+  attr_reader :balance, :transaction_history
 
-  def initialize(balance = 0)
+  def initialize(balance = 0, transaction_history = Transaction.new)
     @balance = balance
+    @transaction_history = transaction_history
   end
 
   def credit(amount)
@@ -13,5 +14,9 @@ class Account
   def debit(amount)
     fail "Insufficient funds for transaction" if balance < amount
     @balance -= amount
+  end
+
+  def get_history
+    transaction_history.history
   end
 end
