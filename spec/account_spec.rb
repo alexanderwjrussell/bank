@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Account do
 
-  let(:transaction_history) {spy :transaction_history, :new => nil, :history => [], :record_credit => nil, :record_debit => nil}
-
+  let(:account) {described_class.new}
+  let(:time) {Time.now}
 
   it "can return a balance" do
     expect(subject.balance).to eq(0)
@@ -29,14 +29,14 @@ describe Account do
   end
 
   it "can record credits in transaction_history" do
-    subject.credit(10)
-    expect(transaction_history).to have_received(:record_credit).with(10,10)
+    account.credit(10)
+    expect(account.transaction_history).not_to eq([])
   end
 
   it "can record debits in transaction_history" do
-    subject.credit(10)
-    subject.debit(5)
-    expect(transaction_history).to have_received(:record_debit).with(5,5)
+    account.credit(10)
+    account.debit(5)
+    expect(account.transaction_history).not_to eq([])
   end
 
 end
