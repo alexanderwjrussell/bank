@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Account do
 
   let(:account) {described_class.new}
-  let(:time) {Time.now}
 
   it "can return a balance" do
     expect(subject.balance).to eq(0)
