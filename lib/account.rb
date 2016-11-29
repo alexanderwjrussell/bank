@@ -13,7 +13,7 @@ class Account
   end
 
   def debit(amount)
+    fail "Insufficient funds for transaction" if balance < amount
     @balance -= amount
   end
-
 end
