@@ -1,11 +1,11 @@
 class Account
 
-  def initialize
+  def initialize(balance = 0)
     @balance = balance
   end
 
   def balance
-    return 0
+    @balance
   end
 
 end
