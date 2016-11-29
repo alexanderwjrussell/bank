@@ -12,7 +12,7 @@ describe Account do
     expect(account.balance).to eq(0)
   end
 
-  it "can have money creditted to the account" do
+  it "can have money credited to the account" do
     @account.credit(10)
     expect(@account.balance).to eq(10)
   end

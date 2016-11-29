@@ -8,4 +8,8 @@ class Account
     @balance
   end
 
+  def credit(amount)
+    @balance += amount
+  end
+
 end
