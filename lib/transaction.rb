@@ -2,10 +2,12 @@ class Transaction
 
   attr_reader :history
 
-  def initialize(type = "", amount = "")
+  def initialize
     @history = []
-    @type = type
-    @amount = amount
+  end
+
+  def record_credit(credit, balance, time=Time)
+    @history << [time.now, credit,nil, balance]
   end
 
 end
