@@ -10,4 +10,7 @@ class Statement
     transactions.join(" || ")
   end
 
+  def generate_table(transactions)
+    generate_header + (transactions.map {|transaction| generate_row(transaction)}).join("\n")
+  end
 end
