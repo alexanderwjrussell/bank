@@ -1,5 +1,6 @@
 require_relative '../lib/account'
 require_relative '../lib/transaction'
+require_relative '../lib/statement'
 
 RSpec.configure do |config|
 
