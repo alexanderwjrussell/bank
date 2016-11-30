@@ -6,4 +6,8 @@ class Statement
     HEADER.join(" || ") + "\n"
   end
 
+  def generate_row(transactions)
+    transactions.join(" || ")
+  end
+
 end
