@@ -29,6 +29,22 @@ date       || credit || debit   || balance
 10/01/2012 || 1000.00||         || 1000.00
 ```
 
+### irb Testing
+```
+$ require './lib/account.rb'
+$ require './lib/statement.rb'
+$ account = Account.new
+$ statement = Statement.new
+$ account.credit(10)
+$ account.debit(5)
+$ account.credit(100)
+$ account.debit(1000)
+$ account.transaction_history.history
+$ statement.generate_header(account.transaction_history.history)
+$ statement.generate_row(account.transaction_history.history)
+$ statement.generate_table(account.transaction_history.history)
+```
+
 ### Solution
 - [x] <insert here>
 
